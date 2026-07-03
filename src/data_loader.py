@@ -35,7 +35,7 @@ def download_fred_data(series_dict, start=START_DATE, end=END_DATE):
 
 
 def process_monthly_data(df):
-    monthly = df.resample("M").last()
+    monthly = df.resample("ME").last()
 
     monthly["CPI_YoY"] = monthly["CPI"].pct_change(12) * 100
     monthly["Core_CPI_YoY"] = monthly["Core_CPI"].pct_change(12) * 100
